@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-helm-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-helm-demo
+  template:
+    metadata:
+      name: my-helm-demo
+      labels:
+        app: my-helm-demo
+    spec:
+      containers:
+      - image: xiaomotong888/my-helm-demo:v1
+        name: my-helm-demo
+
